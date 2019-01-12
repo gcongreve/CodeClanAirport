@@ -29,4 +29,8 @@ public class Plane {
     public String getName() {
         return name;
     }
+
+    public void addPassenger(Passenger passenger) {
+        this.passengers.add(passenger);
+    }
 }

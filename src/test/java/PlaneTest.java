@@ -24,4 +24,25 @@ public class PlaneTest {
         assertEquals(PlaneType.CODINGPLANE1, plane1.getType());
     }
 
+    @Test
+    public void hasAirline(){
+        assertEquals(AirlineType.MEGAGOODAIRLINES, plane1.getAirline());
+    }
+
+    @Test
+    public void planeStartsEmpty(){
+        assertEquals(0, plane1.getPassengers().size());
+    }
+
+    @Test
+    public void planeHasCapacity(){
+        assertEquals(1, plane1.getType().getCapacity());
+    }
+
+    @Test
+    public void planeCanTakeOnPassenger(){
+        plane1.addPassenger(passenger);
+        assertEquals(1, plane1.getPassengers().size());
+    }
+
 }
