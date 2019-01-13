@@ -35,6 +35,10 @@ public class Hanger {
         }
     }
 
+    public int numberOfPlanes(){
+        return hanger.size();
+    }
+
 
     public void removePlane(Plane plane) {
         this.hanger.remove(plane);

@@ -73,7 +73,16 @@ public class AirportTest {
         airport.addHanger(hanger2);
         airport.addPlaneToHanger(plane1);
         assertEquals(hanger2, airport.emptyHanger());
+    }
 
+    @Test
+    public void canAddPlanesToMultipleHangers(){
+        airport.addHanger(hanger1);
+        airport.addHanger(hanger2);
+        airport.addPlaneToHanger(plane1);
+        airport.addPlaneToHanger(plane2);
+        assertEquals(1, hanger1.numberOfPlanes());
+        assertEquals(1, hanger2.numberOfPlanes());
     }
 
 }
