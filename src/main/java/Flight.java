@@ -52,9 +52,18 @@ public class Flight {
         this.plane.add(plane);
     }
 
-    public void sellTicket(Passenger passenger) {
-        addPassenger(passenger);
-        this.ticketsSold += 1;
+    public int remainingTickets() {
+        return flightCapacity - ticketsSold;
     }
+
+    public void sellTicket(Passenger passenger) {
+        if (remainingTickets() != 0) {
+            addPassenger(passenger);
+            this.ticketsSold += 1;
+        }
+    }
+
+
+
 
 }
