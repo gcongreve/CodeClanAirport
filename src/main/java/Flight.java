@@ -6,12 +6,16 @@ public class Flight {
     private DestinationType destination;
     private ArrayList<Passenger> flightPassengers;
     private ArrayList<Plane> plane;
+    private int flightCapacity;
+    private int ticketsSold;
 
-    public Flight(int flightNumber, DestinationType destination){
+    public Flight(int flightNumber, DestinationType destination, int flightCapacity){
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.plane = new ArrayList<>();
         this.flightPassengers = new ArrayList<>();
+        this.flightCapacity = flightCapacity;
+        this.ticketsSold = 0;
 
     }
 
@@ -36,7 +40,21 @@ public class Flight {
         this.flightPassengers.add(passenger);
     }
 
+    public int getFlightCapacity() {
+        return flightCapacity;
+    }
+
+    public int getTicketsSold() {
+        return ticketsSold;
+    }
+
     public void addPlane(Plane plane) {
         this.plane.add(plane);
     }
+
+    public void sellTicket(Passenger passenger) {
+        addPassenger(passenger);
+        this.ticketsSold += 1;
+    }
+
 }

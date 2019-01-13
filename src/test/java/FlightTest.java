@@ -12,7 +12,7 @@ public class FlightTest {
     @Before
     public void before(){
     plane = new Plane("Mr Plane", PlaneType.CODINGPLANE3, AirlineType.OKAIRLINES);
-    flight = new Flight(1, DestinationType.DUNDEE);
+    flight = new Flight(1, DestinationType.DUNDEE, 2);
     passenger = new Passenger("Steve");
 
     }
@@ -37,6 +37,23 @@ public class FlightTest {
     public void canAddPlane(){
         flight.addPlane(plane);
         assertEquals(1, flight.getPlane().size());
+    }
+
+    @Test
+    public void canHaveCapacity(){
+        assertEquals(2, flight.getFlightCapacity());
+    }
+
+    @Test
+    public void ticketsStartsAtZero(){
+        assertEquals(0, flight.getTicketsSold());
+    }
+
+    @Test
+    public void canSellaTicket(){
+        flight.sellTicket(passenger);
+        assertEquals(1, flight.getFlightPassengers().size());
+        assertEquals(1, flight.getTicketsSold());
     }
 
 

@@ -21,7 +21,7 @@ public class AirportTest {
         passenger1 = new Passenger("Dave");
         passenger2 = new Passenger("Morag");
         airport = new Airport(AirportType.DUNDEE);
-        flight1 = new Flight(1, DestinationType.BROUGHTY_FERRY);
+        flight1 = new Flight(1, DestinationType.BROUGHTY_FERRY, 2);
         hanger1 = new Hanger("Hanger 1", 1);
         hanger2 = new Hanger("Hanger 2",2);
     }
