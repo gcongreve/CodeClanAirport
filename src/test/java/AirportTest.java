@@ -11,6 +11,8 @@ public class AirportTest {
     private Passenger passenger1;
     private Passenger passenger2;
     private Flight flight1;
+    private Hanger hanger1;
+    private Hanger hanger2;
 
     @Before
     public void before(){
@@ -20,6 +22,8 @@ public class AirportTest {
         passenger2 = new Passenger("Morag");
         airport = new Airport(AirportType.DUNDEE);
         flight1 = new Flight(1, DestinationType.BROUGHTY_FERRY);
+        hanger1 = new Hanger("Hanger 1", 1);
+        hanger2 = new Hanger("Hanger 2",2);
     }
 
     @Test
@@ -28,14 +32,14 @@ public class AirportTest {
     }
 
     @Test
-    public void hangerStartsEmpty(){
-        assertEquals(0, airport.getHanger().size());
+    public void hangersStartsEmpty(){
+        assertEquals(0, airport.getHangers().size());
     }
 
     @Test
-    public void canAddPlaneToHanger(){
-        airport.addPlane(plane1);
-        assertEquals(1, airport.getHanger().size());
+    public void canAddHangerToAirport(){
+        airport.addHanger(hanger1);
+        assertEquals(1, airport.getHangers().size());
     }
 
     @Test
@@ -48,4 +52,28 @@ public class AirportTest {
         airport.addFlight(flight1);
         assertEquals(1, airport.getFlights().size());
     }
+
+    @Test
+    public void canReturnEmptyHanger(){
+        airport.addHanger(hanger1);
+        assertEquals(hanger1, airport.emptyHanger());
+    }
+
+    @Test
+    public void canAddPlaneToHanger(){
+        airport.addHanger(hanger1);
+        airport.addPlaneToHanger(plane1);
+        assertEquals(true, hanger1.isFull());
+
+    }
+
+    @Test
+    public void canReturnFirstEmptyHanger(){
+        airport.addHanger(hanger1);
+        airport.addHanger(hanger2);
+        airport.addPlaneToHanger(plane1);
+        assertEquals(hanger2, airport.emptyHanger());
+
+    }
+
 }

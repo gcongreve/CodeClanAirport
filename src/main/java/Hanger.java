@@ -24,13 +24,19 @@ public class Hanger {
         return capacity;
     }
 
-    public void addPlane(Plane plane) {
-        this.hanger.add(plane);
-    }
 
     public boolean isFull(){
         return hanger.size() == capacity;
     }
 
+    public void addPlane(Plane plane) {
+        if (!isFull()) {
+            this.hanger.add(plane);
+        }
+    }
 
+
+    public void removePlane(Plane plane) {
+        this.hanger.remove(plane);
+    }
 }

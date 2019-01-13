@@ -55,4 +55,22 @@ public class HangerTest {
         assertEquals(1, smallHanger.getHanger().size());
     }
 
+    @Test
+    public void canRemovePlane1(){
+        bigHanger.addPlane(plane1);
+        bigHanger.addPlane(plane2);
+        bigHanger.removePlane(plane1);
+        assertEquals(1, bigHanger.getHanger().size());
+        assertEquals(true, bigHanger.getHanger().contains(plane2));
+    }
+
+    @Test
+    public void canRemovePlane2(){
+        bigHanger.addPlane(plane1);
+        bigHanger.addPlane(plane2);
+        bigHanger.removePlane(plane2);
+        assertEquals(1, bigHanger.getHanger().size());
+        assertEquals(true, bigHanger.getHanger().contains(plane1));
+    }
+
 }
