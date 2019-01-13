@@ -94,16 +94,19 @@ public class Airport {
         }
     }
 
-
-    public void boardPlane(Flight flight) {
-        assignPlaneToFlight(flight);
-        Plane plane = flight.getPlane().get(0);
-        addFlightPassengersToPlane(flight, plane);
+    public void removePlaneFromHanger(Plane plane){
         for (Hanger hanger : this.hangers){
             if (hanger.getHanger().contains(plane)){
                 hanger.removePlane(plane);
             }
         }
+    }
+
+    public void boardPlane(Flight flight) {
+        assignPlaneToFlight(flight);
+        Plane plane = flight.getPlane().get(0);
+        addFlightPassengersToPlane(flight, plane);
+        removePlaneFromHanger(plane);
     }
 
     public ArrayList<Passenger> getDepartureLounge() {
@@ -112,5 +115,9 @@ public class Airport {
 
     public void addToLounge(Passenger passenger) {
         this.departureLounge.add(passenger);
+    }
+
+    public Passenger getPassengerFromLoungeAlgorithm(){
+        // TODO: make an algorithm
     }
 }

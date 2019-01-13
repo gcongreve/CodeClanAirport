@@ -26,8 +26,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/AirportTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="156" column="23" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
+                <state relative-caret-position="362">
+                  <caret line="160" selection-start-line="160" selection-end-line="160" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#649#650#0" expanded="true" />
@@ -129,8 +129,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/Airport.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="370">
-                  <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
+                <state relative-caret-position="347">
+                  <caret line="120" column="7" lean-forward="true" selection-start-line="119" selection-start-column="2" selection-end-line="121" selection-end-column="5" />
                   <folding>
                     <element signature="e#464#465#0" expanded="true" />
                     <element signature="e#494#495#0" expanded="true" />
@@ -280,7 +280,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547405987164" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547413540764" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
@@ -369,9 +369,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AirportTest_canOnlySellFlightsInAirport - 2019.01.13 at 12h 34m 21s.xml">
-      <configuration name="AirportTest.canOnlySellFlightsInAirport" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AirportTest_canOnlySellFlightsInAirport - 2019.01.13 at 12h 35m 31s.xml">
       <configuration name="AirportTest.canOnlySellFlightsInAirport" configurationId="JUnit" />
     </history-entry>
@@ -398,6 +395,9 @@
     </history-entry>
     <history-entry file="AirportTest_departureLoungeStartsEmpty - 2019.01.13 at 18h 55m 43s.xml">
       <configuration name="AirportTest.departureLoungeStartsEmpty" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AirportTest_addPassengerToLounge - 2019.01.13 at 18h 59m 49s.xml">
+      <configuration name="AirportTest.addPassengerToLounge" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -632,10 +632,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AirportTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+            <element signature="e#4640#4641#0" expanded="true" />
+            <element signature="e#4708#4709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Airport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
+        <state relative-caret-position="347">
+          <caret line="120" column="7" lean-forward="true" selection-start-line="119" selection-start-column="2" selection-end-line="121" selection-end-column="5" />
           <folding>
             <element signature="e#464#465#0" expanded="true" />
             <element signature="e#494#495#0" expanded="true" />
@@ -653,24 +671,6 @@
             <element signature="e#2976#2977#0" expanded="true" />
             <element signature="e#3028#3029#0" expanded="true" />
             <element signature="e#3063#3064#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AirportTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="156" column="23" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#818#819#0" expanded="true" />
-            <element signature="e#876#877#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#4640#4641#0" expanded="true" />
-            <element signature="e#4708#4709#0" expanded="true" />
           </folding>
         </state>
       </provider>
