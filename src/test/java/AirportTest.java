@@ -147,4 +147,17 @@ public class AirportTest {
         assertEquals(true, flight1.getFlightPassengers().contains(passenger1));
     }
 
+    @Test
+    public void departureLoungeStartsEmpty(){
+        assertEquals(0, airport.getDepartureLounge().size());
+    }
+
+    @Test
+    public void addPassengerToLounge(){
+        airport.addToLounge(passenger1);
+        assertEquals(1, airport.getDepartureLounge().size());
+    }
+
+
+
 }

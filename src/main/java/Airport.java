@@ -5,11 +5,13 @@ public class Airport {
     private AirportType airportType;
     private ArrayList<Hanger> hangers;
     private ArrayList<Flight> flights;
+    private ArrayList<Passenger> departureLounge;
 
     public Airport(AirportType airportType) {
         this.airportType = airportType;
         this.hangers = new ArrayList<>();
         this.flights = new ArrayList<>();
+        this.departureLounge = new ArrayList<>();
     }
 
     public AirportType getAirportType() {
@@ -95,6 +97,20 @@ public class Airport {
 
     public void boardPlane(Flight flight) {
         assignPlaneToFlight(flight);
-        addFlightPassengersToPlane(flight, flight.getPlane().get(0));
+        Plane plane = flight.getPlane().get(0);
+        addFlightPassengersToPlane(flight, plane);
+        for (Hanger hanger : this.hangers){
+            if (hanger.getHanger().contains(plane)){
+                hanger.removePlane(plane);
+            }
+        }
+    }
+
+    public ArrayList<Passenger> getDepartureLounge() {
+        return departureLounge;
+    }
+
+    public void addToLounge(Passenger passenger) {
+        this.departureLounge.add(passenger);
     }
 }
