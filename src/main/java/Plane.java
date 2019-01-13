@@ -30,6 +30,10 @@ public class Plane {
         return name;
     }
 
+    public int getCapacity(){
+        return this.type.getCapacity();
+    }
+
     public boolean isFull(){
         return this.type.getCapacity() == this.passengers.size();
     }

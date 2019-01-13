@@ -49,5 +49,51 @@ public class Airport {
     }
 
 
+    public void sellTicket(Flight flight, Passenger passenger) {
+        if (this.flights.contains(flight)) {
+            flight.sellTicket(passenger);
+        }
+    }
 
+    public int ticketsSold(Flight flight) {
+        return flight.getTicketsSold();
+    }
+
+
+    public int ticketsRemaining(Flight flight) {
+        return flight.remainingTickets();
+    }
+
+    public Plane returnSuitablePlane(int passengerNumber){
+        Plane suitablePlane = null;
+        int numberDifference = 1000;
+        for (Hanger hanger : this.hangers) {
+            for (Plane plane : hanger.getHanger()) {
+                if (plane.getCapacity() >= passengerNumber) {
+                    if ((plane.getCapacity() - passengerNumber) < numberDifference) {
+                        suitablePlane = plane;
+                        numberDifference = (plane.getCapacity() - passengerNumber);
+                    }
+                }
+            }
+        }
+        return suitablePlane;
+    }
+
+    public void assignPlaneToFlight(Flight flight) {
+        int passengerNumber = flight.getTicketsSold();
+        Plane suitablePlane = returnSuitablePlane(passengerNumber);
+        flight.addPlane(suitablePlane);
+    }
+
+//    public void assignPlaneToFlight(Flight flight) {
+//        int passengerNumber = flight.getTicketsSold();
+//        for (Hanger hanger : this.hangers) {
+//            for (Plane plane : hanger.getHanger()) {
+//                if (plane.getCapacity() == passengerNumber) {
+//                    flight.addPlane(plane);
+//                }
+//            }
+//        }
+//    }
 }
