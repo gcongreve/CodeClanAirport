@@ -35,8 +35,8 @@ public class Airport {
 
 
     public Hanger emptyHanger() {
-        for (Hanger hanger : this.getHangers()){
-            if (!hanger.isFull()){
+        for (Hanger hanger : this.getHangers()) {
+            if (!hanger.isFull()) {
                 return hanger;
             }
         }
@@ -44,7 +44,7 @@ public class Airport {
     }
 
 
-    public void addPlaneToHanger(Plane plane){
+    public void addPlaneToHanger(Plane plane) {
         emptyHanger().addPlane(plane);
     }
 
@@ -64,7 +64,7 @@ public class Airport {
         return flight.remainingTickets();
     }
 
-    public Plane returnSuitablePlane(int passengerNumber){
+    public Plane returnSuitablePlane(int passengerNumber) {
         Plane suitablePlane = null;
         int numberDifference = 1000;
         for (Hanger hanger : this.hangers) {
@@ -86,14 +86,15 @@ public class Airport {
         flight.addPlane(suitablePlane);
     }
 
-//    public void assignPlaneToFlight(Flight flight) {
-//        int passengerNumber = flight.getTicketsSold();
-//        for (Hanger hanger : this.hangers) {
-//            for (Plane plane : hanger.getHanger()) {
-//                if (plane.getCapacity() == passengerNumber) {
-//                    flight.addPlane(plane);
-//                }
-//            }
-//        }
-//    }
+    public void addFlightPassengersToPlane(Flight flight, Plane plane){
+        for (Passenger passenger : flight.getFlightPassengers()){
+            plane.addPassenger(passenger);
+        }
+    }
+
+
+    public void boardPlane(Flight flight) {
+        assignPlaneToFlight(flight);
+        addFlightPassengersToPlane(flight, flight.getPlane().get(0));
+    }
 }

@@ -137,4 +137,14 @@ public class AirportTest {
         assertEquals(true, flight1.getPlane().contains(plane2));
     }
 
+    @Test
+    public void flightPassengersBoardFlight(){
+        airport.addHanger(hanger1);
+        airport.addPlaneToHanger(plane1);
+        airport.addFlight(flight1);
+        airport.sellTicket(flight1, passenger1);
+        airport.boardPlane(flight1);
+        assertEquals(true, flight1.getFlightPassengers().contains(passenger1));
+    }
+
 }
